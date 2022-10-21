@@ -70,6 +70,6 @@ if __name__ == "__main__":
 
     # creates tables and sample data
     db.create_all()
-    example_data()
+    # example_data()
 
     print("Connected to the db!")

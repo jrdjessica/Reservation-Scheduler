@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 
-{% block title %}{% endblock %}
+{% block title %}Search Appointments{% endblock %}
 
-{% block body %}{% endblock %}
+{% block body %}
+
+<form action="/check" method="POST">
+    <input type="datetime-local" name="appointment">
+    <button type="submit">Submit</button>
+</form>
+
+
+<script src="/static/js/searchAppointments.js"></script>
+{% endblock %}

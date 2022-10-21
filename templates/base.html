@@ -6,6 +6,11 @@
 </head>
 
 <body>
+    {% for msg in get_flashed_messages() %}
+    <p class="flash-message">
+        {{ msg }}
+    </p>
+    {% endfor %}
     {% block body %}{% endblock %}
 </body>
 
