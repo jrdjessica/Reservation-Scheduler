@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, session
 from model import connect_to_db
 
 app = Flask(__name__)
@@ -9,6 +9,16 @@ def show_login():
     """User log in page."""
 
     return render_template('login.html')
+
+
+@app.route('/login', methods=['POST'])
+def user_login():
+    """User logs in."""
+
+    username = request.form.get('username')
+    session['username'] = username
+
+    return redirect('/search')
 
 
 @app.route('/search')

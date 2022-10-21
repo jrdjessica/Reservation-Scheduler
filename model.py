@@ -38,6 +38,8 @@ class Appointment(db.Model):
 
 def example_data():
     user1 = User(username='user1')
+    user2 = User(username='user2')
+    user3 = User(username='user3')
 
     appointments = [
         Appointment(user=user1, date=datetime.strptime('2017-06-01T08:30',
