@@ -42,7 +42,11 @@ def check_appointment():
 
     check = crud.check_appointment(appointment)
 
-    if not check:
+    same_day = crud.check_same_day_appointment(username, appointment)
+
+    if same_day:
+        flash('You have an appointment on this same day. Choose another day.')
+    elif not check:
         reservation = crud.add_reservation(username, appointment)
         db.session.add(reservation)
         db.session.commit()
