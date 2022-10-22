@@ -1,1 +1,1 @@
-web: gunicorn reservation-scheduler:app
+web: gunicorn app:server
