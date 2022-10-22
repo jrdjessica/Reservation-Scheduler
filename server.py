@@ -1,10 +1,12 @@
 from flask import Flask, render_template, request, redirect, session, flash
+from jinja2 import StrictUndefined
 from model import connect_to_db, db
 
 import crud
 
 app = Flask(__name__)
 app.secret_key = "secret"
+app.jinja_env.undefined = StrictUndefined
 
 
 @app.route('/')
@@ -55,7 +57,11 @@ def check_appointment():
 def get_scheduled_appointments():
     """View all the scheduled appointments for the current user."""
 
-    return render_template('view-apts.html')
+    username = session.get('username')
+
+    reservations = crud.view_reservations(username)
+
+    return render_template('view-apts.html', reservations=reservations)
 
 
 if __name__ == "__main__":

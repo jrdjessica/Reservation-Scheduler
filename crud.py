@@ -17,3 +17,12 @@ def add_reservation(username, appointment):
     reservation = Appointment(username=username, date=appointment)
 
     return reservation
+
+
+def view_reservations(username):
+    """View user's reservation(s)."""
+
+    user_reservations = Appointment.query.filter(
+        Appointment.username == username).all()
+
+    return user_reservations

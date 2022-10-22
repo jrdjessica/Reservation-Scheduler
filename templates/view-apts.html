@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 
-{% block title %}{% endblock %}
+{% block title %}Reservations{% endblock %}
 
-{% block body %}{% endblock %}
+{% block body %}
+<h1>Reservations</h1>
+{% if reservations %}
+<ul>
+    {% for reservation in reservations%}
+    <li>{{ reservation.date }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% endblock %}
