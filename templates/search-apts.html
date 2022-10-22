@@ -3,13 +3,13 @@
 {% block title %}Search Appointments{% endblock %}
 
 {% block body %}
+<h1>Search Available Appointments</h1>
 
 <form action="/check" method="POST">
-    <input type="datetime-local" name="appointment">
+    <input type="datetime-local" name="appointment" step="1800" value="2022-01-01T12:00">
     <button type="submit">Submit</button>
 </form>
 
-<a href="/view">Click to view your reservations</a>
 
-<script src="/static/js/searchAppointments.js"></script>
+<a href="/view">Click to view your reservations</a>
 {% endblock %}
