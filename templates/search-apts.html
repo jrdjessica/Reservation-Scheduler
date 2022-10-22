@@ -5,11 +5,13 @@
 {% block body %}
 <h1>Search Available Appointments</h1>
 
+<h3>Reservations are 30 minutes long</h3>
+<h4>You have a maximum of 1 reservation per day</h4>
+
 <form action="/check" method="POST">
     <input type="datetime-local" name="appointment" step="1800" value="2022-01-01T12:00">
     <button type="submit">Submit</button>
 </form>
-
-
+<br />
 <a href="/view">Click to view your reservations</a>
 {% endblock %}
